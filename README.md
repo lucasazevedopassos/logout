@@ -36,13 +36,13 @@ You can:
 
 **Example**
 
-  node ./app.js disconnect-all --firewall "192.168.1.1" --group jtss\group --key HUDSAHUDS1231UDSAD=
+  node ./app.js disconnect-all --firewall "192.168.1.1" --gateway GP_GATEWAY_CLIENT-N --group jtss\group --key HUDSAHUDS1231UDSAD=
   
 ###### Disconnect a single user:
 
 **Example**
 
-  node ./app.js disconnect --firewall "192.168.1.1" --username lucas --computer LAPTOP01 --key HUDSAHUDS1231UDSAD=
+  node ./app.js disconnect --firewall "192.168.1.1" --gateway GP_GATEWAY_CLIENT-N --username lucas --computer LAPTOP01 --key HUDSAHUDS1231UDSAD=
   
 ###### Generate the API Key:
 
