@@ -95,6 +95,11 @@ yargs.command({
             demandOption: true,
             type: 'string'
         },
+        gateway: {
+            describe: 'Palo Alto GP gateway',
+            demandOption: true,
+            type: 'string'
+        }
     },
     handler(argv) {
         helper.getMember(argv.firewall,argv.group,argv.key, (err, ADdata) => {
@@ -104,7 +109,7 @@ yargs.command({
                         var filtered = VPNdata.filter(x => ADdata.includes(x.user))
                         if(filtered.lenght > 0) {
                             filtered.forEach((user)=>{
-                                helper.disconnect(argv.firewall,user.primaryusername.value,user.computer.value,key, (err, logData) =>{
+                                helper.disconnect(argv.firewall,user.primaryusername.value,user.computer.value,key,argv.gateway, (err, logData) =>{
                                     if(!err){
                                         console.log(logData)
                                     } else {
@@ -152,9 +157,14 @@ yargs.command({
             demandOption: true,
             type: 'string'
         },
+        gateway: {
+            describe: 'Palo Alto GP gateway',
+            demandOption: true,
+            type: 'string'
+        }
     },
     handler(argv) {
-        helper.disconnect(argv.firewall,argv.username, argv.computer, argv.key, (err, disData) =>{
+        helper.disconnect(argv.firewall,argv.username, argv.computer, argv.key, argv.gateway, (err, disData) =>{
             if(!err){
                 console.log(disData)
             } else {
