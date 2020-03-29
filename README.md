@@ -11,7 +11,7 @@ You can:
   - Disconnect a intersection between a specific group and the current VPN users
   - Generate the API Key
   
-###Installing
+### Installing
 
 1. Copy the directory to your local machine with NPM and Node installed
 
